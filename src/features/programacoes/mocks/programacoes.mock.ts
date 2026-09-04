@@ -1,0 +1,40 @@
+import { Programacao } from "../types/programacao.types";
+
+export const programacoesMock: Programacao[] = [
+  {
+    id: "1",
+    nome: "Culto Domingo Manhã",
+    contexto: "Tenda",
+    data: "2026-07-19",
+    horario: "09:00",
+    local: "Auditório Principal",
+    tema: "Esperança",
+    textoBase: "Romanos 5",
+    referenciaBiblica: "Romanos 5:1-11",
+    status: "planejamento",
+  },
+  {
+    id: "2",
+    nome: "Somos Atos",
+    contexto: "Somos Atos",
+    data: "2026-07-24",
+    horario: "20:00",
+    local: "Auditório Jovem",
+    tema: "Chamados",
+    textoBase: "Isaías 6",
+    referenciaBiblica: "Isaías 6:8",
+    status: "equipe",
+  },
+  {
+    id: "3",
+    nome: "Celebrando a Restauração",
+    contexto: "CR",
+    data: "2026-07-22",
+    horario: "19:30",
+    local: "Templo",
+    tema: "Nova Vida",
+    textoBase: "João 8",
+    referenciaBiblica: "João 8:36",
+    status: "confirmacoes",
+  },
+];

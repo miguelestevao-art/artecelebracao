@@ -1,39 +1,26 @@
 import { ReactNode } from "react";
 
-import Header from "./Header";
-import Sidebar from "./Sidebar";
+import Header from "../Header";
+import Sidebar from "../Sidebar";
+import PageContainer from "../PageContainer";
 
 interface AppShellProps {
   children: ReactNode;
 }
 
-export default function AppShell({ children }: AppShellProps) {
+export default function AppShell({
+  children,
+}: AppShellProps) {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        minHeight: "100vh",
-      }}
-    >
+    <div className="flex min-h-screen flex-col bg-background">
       <Header />
 
-      <div
-        style={{
-          display: "flex",
-          flex: 1,
-        }}
-      >
+      <div className="flex flex-1">
         <Sidebar />
 
-        <main
-          style={{
-            flex: 1,
-            padding: "24px",
-          }}
-        >
+        <PageContainer>
           {children}
-        </main>
+        </PageContainer>
       </div>
     </div>
   );

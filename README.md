@@ -1,36 +1,282 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ArteCelebração Hub
 
-## Getting Started
+> Plataforma web para gestão ministerial do ministério de música **ArteCelebração**.
 
-First, run the development server:
+O ArteCelebração Hub foi concebido para centralizar a gestão do ministério, promovendo organização, comunicação, inteligência de repertório e apoio à liderança por meio de uma plataforma moderna, escalável e intuitiva.
+
+---
+
+# Visão do Produto
+
+O projeto está fundamentado em três pilares estratégicos:
+
+- 🎼 Gestão da Equipe de Servos
+- 📚 Inteligência de Repertório
+- 📈 Inteligência Ministerial
+
+Toda funcionalidade implementada deve fortalecer pelo menos um desses pilares.
+
+---
+
+# Stack Tecnológica
+
+- Next.js 16 (App Router)
+- React 19
+- TypeScript
+- Firebase Authentication
+- Cloud Firestore (Standard Edition)
+- Tailwind CSS v4
+- shadcn/ui
+- Lucide Icons
+- Git
+- GitHub
+
+---
+
+# Arquitetura
+
+O projeto adota uma arquitetura **Feature-First**, separando claramente domínio, interface, infraestrutura e regras de negócio.
+
+## Estrutura simplificada
+
+```
+src/
+├── app/
+├── components/
+├── layout/
+├── shared/
+│   ├── EmptyState
+│   ├── PageActions
+│   ├── PageContainer
+│   ├── PageHeader
+│   ├── SearchInput
+│   ├── SectionCard
+│   ├── StatCard
+│   └── StatusBadge
+└── ui/
+├── config/
+├── features/
+├── hooks/
+├── lib/
+│   └── firebase/
+├── providers/
+├── services/
+├── styles/
+├── types/
+└── utils/
+```
+
+As decisões arquiteturais são registradas por meio de ADRs (Architectural Decision Records).
+
+---
+
+# Fluxo de Desenvolvimento
+
+Todo incremento do projeto segue o fluxo:
+
+```
+Ideia
+    ↓
+Documentação
+    ↓
+ADR (quando necessário)
+    ↓
+Implementação
+    ↓
+Validação
+    ↓
+Commit
+    ↓
+Atualização da documentação
+```
+
+Essa abordagem garante rastreabilidade, consistência e facilidade de manutenção.
+
+---
+
+# Documentação
+
+Toda a documentação oficial encontra-se na pasta:
+
+```
+docs/
+```
+
+## Documentos
+
+| Documento | Descrição                      |
+| --------- | ------------------------------ |
+| 00        | Visão do Projeto               |
+| 01        | Pilares do Produto             |
+| 02        | Regras de Negócio              |
+| 03        | Modelo de Domínio              |
+| 04        | Fluxo Operacional              |
+| 05        | Controle de Acesso             |
+| 06        | Modelo Conceitual              |
+| 07        | Requisitos Funcionais          |
+| 08        | Mapa de Navegação              |
+| 09        | Arquitetura da Interface       |
+| 10        | Design System                  |
+| 11        | Guia de Desenvolvimento        |
+| 12        | Brand Book                     |
+| 13        | Design Tokens                  |
+| 14        | Padrões de Desenvolvimento     |
+| decisoes/ | Architectural Decision Records |
+
+---
+
+# Configuração do Ambiente
+
+## 1. Clonar o repositório
+
+```bash
+git clone <URL_DO_REPOSITORIO>
+```
+
+---
+
+## 2. Instalar dependências
+
+```bash
+npm install
+```
+
+---
+
+## 3. Configurar variáveis de ambiente
+
+Criar:
+
+```
+.env.local
+```
+
+utilizando como referência:
+
+```
+.env.example
+```
+
+---
+
+## 4. Executar o projeto
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Aplicação disponível em:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+# Scripts
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Inicia o ambiente de desenvolvimento.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run build
+```
 
-## Deploy on Vercel
+Gera a versão de produção.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run start
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Executa a aplicação compilada.
+
+```bash
+npm run lint
+```
+
+Executa a análise estática do código.
+
+---
+
+# Convenções
+
+O projeto utiliza:
+
+- Feature-First Architecture
+- Conventional Commits
+- TypeScript Strict Mode
+- Firebase como Backend-as-a-Service
+- Design System baseado em shadcn/ui
+
+As convenções completas encontram-se em:
+
+```
+docs/11-guia-de-desenvolvimento.md
+```
+
+---
+## Decisões Arquiteturais
+
+As principais decisões do projeto são documentadas por meio de ADRs.
+
+Até o momento foram aprovadas decisões relacionadas a:
+
+- Arquitetura Feature-First
+- Estrutura Base do Projeto
+- Camadas para acesso a serviços externos
+- Estratégia do Design System
+- Adoção do shadcn/ui
+- Providers Globais
+- Proteção de Rotas baseada em Layouts
+---
+# Mapa de Navegação
+
+✅ Fase 1 — Fundação da Plataforma
+
+- Arquitetura
+- Firebase
+- Providers
+- Login
+- Design System
+- AppShell
+- Componentes Compartilhados
+
+🚧 Fase 2 — Módulos Principais
+
+- Dashboard
+- Programações
+- Biblioteca Musical
+- Equipe de Servos
+- Contextos
+
+🔜 Fase 3 — Operação Ministerial
+
+- Escalas
+- Confirmações
+- Disponibilidade
+- Preparações
+
+🔮 Fase 4 — Inteligência Ministerial
+
+- Indicadores
+- Histórico
+- Relatórios
+- Dashboards
+
+---
+
+# Status do Projeto
+
+🚧 Em desenvolvimento.
+
+Atualmente o projeto concluiu a Fase 1 (Fundação da Plataforma) e iniciou a construção dos módulos de negócio.
+
+A autenticação, o Design System, a arquitetura Feature-First e a infraestrutura base encontram-se implementados.
+---
+
+# Licença
+
+Projeto desenvolvido para uso interno do ministério **ArteCelebração**.
